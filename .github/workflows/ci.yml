@@ -5,7 +5,7 @@ on:
 jobs:
   golangci:
     name: lint
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -19,7 +19,7 @@ jobs:
           version: v1.54.1
   verify:
     name: verify
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     env:
       GOPATH: ${{ github.workspace }}
       WORKSPACE: ${{ github.workspace }}/src/github.com/kosmos-io/kosmos
@@ -41,7 +41,7 @@ jobs:
   build:
     name: build
     needs: verify
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -57,7 +57,7 @@ jobs:
   test:
     name: Unit test
     needs: build
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -69,7 +69,7 @@ jobs:
   e2e:
     name: E2e test
     needs: build
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     steps:
       # Free up disk space on Ubuntu
       - name: Free Disk Space (Ubuntu)
