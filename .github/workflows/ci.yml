@@ -21,7 +21,7 @@ jobs:
     name: verify
     runs-on: self-hosted
     env:
-      GOPATH: ${{ env.workspace }}
+      #GOPATH: ${{ github.workspace }}
       WORKSPACE: ${{ github.workspace }}/src/github.com/kosmos-io/kosmos
     defaults:
       run:
