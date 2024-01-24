@@ -16,7 +16,7 @@ jobs:
       - name: golint
         uses: golangci/golangci-lint-action@v3
         with:
-          version: v1.54.1
+          version: v1.54.2
   verify:
     name: verify
     runs-on: self-hosted
